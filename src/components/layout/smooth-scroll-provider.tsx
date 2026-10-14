@@ -22,10 +22,10 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
 
         lenisRef.current = lenis;
 
-        function animate(time: number) {
+        const animate = (time: number) => {
           lenis.raf(time);
           raf = requestAnimationFrame(animate);
-        }
+        };
 
         raf = requestAnimationFrame(animate);
       } catch (err) {
